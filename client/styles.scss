@@ -1,0 +1,79 @@
+$primary-color: white;
+$accent-color: #ff6225;
+$yellow-color: yellow;
+$green-color: green;
+$background: black;
+
+$grid-size: 50;
+$grid-background: darken($primary-color, 90%);
+$grid-border: darken($primary-color, 60%);
+
+body {
+  color: $primary-color;
+  background-color: $background;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.grid {
+  margin: auto;
+  display: grid;
+  grid-template: repeat($grid-size, auto) / repeat($grid-size, auto);
+  width: 80vmin;
+  min-height: 80vmin;
+  border: 1px solid $grid-border;
+}
+
+.cell {
+  background: $grid-background;
+  border: 1px solid $grid-border;
+
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.4vmin;
+  text-align: center;
+  vertical-align: middle;
+
+  -moz-user-select: none;
+  user-select: none;
+  cursor: pointer;
+
+  &:hover {
+    background: lighten($grid-background, 20%);
+    border-color: $accent-color;
+  }
+
+  transition: background-color 0.5s ease;
+  &.increment {
+    animation: pulseYellow 1s 1;
+  }
+
+  &.decrement {
+    animation: pulseGreen 1s 1;
+  }
+}
+
+@keyframes pulseYellow {
+  0% {
+    background-color: $grid-background;
+  }
+  50% {
+    background-color: $yellow-color;
+  }
+  100% {
+    background-color: $grid-background;
+  }
+}
+
+@keyframes pulseGreen {
+  0% {
+    background-color: $grid-background;
+  }
+  50% {
+    background-color: $green-color;
+  }
+  100% {
+    background-color: $grid-background;
+  }
+}

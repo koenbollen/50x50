@@ -17,10 +17,10 @@
 
 - [x] Backend bootstrap
 - [x] Basic calls
-- [ ] Client boilerplate
+- [x] Client boilerplate
 - [ ] Client grid based on data
-- [ ] Clickable grid
-- [ ] Backend value increase
+- [x] Clickable grid
+- [x] Backend value increase
 - [ ] Client yellow pulse
 - [ ] Backend fibonacci search and action
 - [ ] Client green pulse
