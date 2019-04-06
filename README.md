@@ -20,7 +20,7 @@
 - [x] Client boilerplate
 - [x] Client grid based on data
 - [x] Clickable grid
-- [ ] Backend value increase
+- [x] Backend value increase
 - [x] Client yellow pulse
 - [ ] Backend fibonacci search and action
 - [x] Client green pulse

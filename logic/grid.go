@@ -29,7 +29,12 @@ func (g *Grid) index(x, y int) int {
 }
 
 func (g *Grid) Increment(x, y int) {
-	g.Data[g.index(x, y)] += 1
+	for i := 0; i < g.Width; i++ {
+		g.Data[g.index(x, i)] += 1
+		if i != x {
+			g.Data[g.index(i, y)] += 1
+		}
+	}
 }
 
 func (g *Grid) Set(x, y, value int) {

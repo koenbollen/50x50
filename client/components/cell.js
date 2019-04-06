@@ -14,9 +14,17 @@ class Cell extends React.Component {
   componentWillReceiveProps(nextProps) {
     if(nextProps.value > this.props.value) {
       this.setState({isIncrement: true});
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(() => {
+        this.setState({isIncrement: false});
+      }, 510);
     } else if(nextProps.value < this.props.value) {
       this.setState({isDecrement: true});
     }
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.timeout)
   }
 
   onClick(e) {

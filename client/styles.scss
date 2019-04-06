@@ -44,13 +44,12 @@ body {
     border-color: $accent-color;
   }
 
-  transition: background-color 0.5s ease;
   &.increment {
-    animation: pulseYellow 1s 1;
+    animation: pulseYellow 0.5s 1;
   }
 
   &.decrement {
-    animation: pulseGreen 1s 1;
+    animation: pulseGreen 0.5s 1;
   }
 }
 

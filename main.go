@@ -37,7 +37,6 @@ func main() {
 	http.HandleFunc("/state/create", func(w http.ResponseWriter, r *http.Request) {
 		session := store.CreateSession()
 		grid := logic.NewGrid(gridSize, gridSize)
-		grid.Set(0, 0, 42)
 		err := store.StoreGrid(session, grid.Data)
 		if err != nil {
 			panic(err)
@@ -67,7 +66,6 @@ func main() {
 		}
 		grid := logic.FromData(gridSize, data)
 		grid.Increment(req.X, req.Y)
-		grid.Increment(10, 10)
 
 		w.WriteHeader(http.StatusOK)
 		err = json.NewEncoder(w).Encode(&response{
