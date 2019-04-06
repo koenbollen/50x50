@@ -18,12 +18,12 @@
 - [x] Backend bootstrap
 - [x] Basic calls
 - [x] Client boilerplate
-- [ ] Client grid based on data
+- [x] Client grid based on data
 - [x] Clickable grid
-- [x] Backend value increase
-- [ ] Client yellow pulse
+- [ ] Backend value increase
+- [x] Client yellow pulse
 - [ ] Backend fibonacci search and action
-- [ ] Client green pulse
+- [x] Client green pulse
 - [ ] Documentation and deployment
 - [ ] Better Error reporting
 - [ ] Extract handlers from main

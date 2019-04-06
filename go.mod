@@ -4,7 +4,9 @@ go 1.12
 
 require (
 	github.com/google/uuid v1.1.1
+	github.com/rs/cors v1.6.0
 	github.com/uber-go/fx v1.9.0 // indirect
+	github.com/unrolled/secure v1.0.0
 	go.uber.org/atomic v1.3.2 // indirect
 	go.uber.org/dig v1.7.0 // indirect
 	go.uber.org/fx v1.9.0
