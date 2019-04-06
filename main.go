@@ -23,7 +23,7 @@ type request struct {
 type response struct {
 	Session string `json:"session"`
 	Grid    []int  `json:"grid"`
-	Width   int    `json:"width"`
+	Size    int    `json:"size"`
 }
 
 func main() {
@@ -36,7 +36,7 @@ func main() {
 
 	http.HandleFunc("/state/create", func(w http.ResponseWriter, r *http.Request) {
 		session := store.CreateSession()
-		grid := logic.NewGrid(gridSize, gridSize)
+		grid := logic.NewGrid(gridSize)
 		err := store.StoreGrid(session, grid.Data)
 		if err != nil {
 			panic(err)
@@ -46,7 +46,7 @@ func main() {
 		err = json.NewEncoder(w).Encode(&response{
 			Session: session,
 			Grid:    grid.Data,
-			Width:   grid.Width,
+			Size:    grid.Size,
 		})
 		if err != nil {
 			panic(err)
@@ -67,11 +67,16 @@ func main() {
 		grid := logic.FromData(gridSize, data)
 		grid.Increment(req.X, req.Y)
 
+		paths := grid.SearchForSequence()
+		if len(paths) > 0 {
+			grid.ClearPaths(paths)
+		}
+
 		w.WriteHeader(http.StatusOK)
 		err = json.NewEncoder(w).Encode(&response{
 			Session: req.Session,
 			Grid:    grid.Data,
-			Width:   grid.Width,
+			Size:    grid.Size,
 		})
 		if err != nil {
 			panic(err)

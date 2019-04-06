@@ -20,6 +20,10 @@ class Cell extends React.Component {
       }, 510);
     } else if(nextProps.value < this.props.value) {
       this.setState({isDecrement: true});
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(() => {
+        this.setState({isDecrement: false});
+      }, 510);
     }
   }
 
@@ -39,7 +43,7 @@ class Cell extends React.Component {
       className += " decrement";
     }
     return (
-      <div className={className} onClick={this.onClick}>{this.props.value}</div>
+      <div className={className} onClick={this.onClick}>{this.props.value > 0 ? this.props.value : "\u00A0"}</div>
     );
   }
 }

@@ -18,9 +18,8 @@ class Grid extends React.Component {
   }
 
   async onCellClick(cell, i, e) {
-    console.log(i, e);
-    const x = i % this.state.width;
-    const y = Math.floor(i / this.state.width);
+    const x = i % this.state.size;
+    const y = Math.floor(i / this.state.size);
 
     const resp = await fetch("http://localhost:8080/state/move", {
       method: "POST",

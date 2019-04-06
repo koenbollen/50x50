@@ -22,7 +22,7 @@
 - [x] Clickable grid
 - [x] Backend value increase
 - [x] Client yellow pulse
-- [ ] Backend fibonacci search and action
+- [x] Backend fibonacci search and action
 - [x] Client green pulse
 - [ ] Documentation and deployment
 - [ ] Better Error reporting
