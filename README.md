@@ -25,7 +25,10 @@ Running at: https://50x50.netlify.com/
 
 ## Local Development
 
-This project is created using Go and javscript. To get all dependencies up and running just run:
+This project is created using Go and javscript. And following the 
+[scripts-to-rule-them-all](https://github.com/github/scripts-to-rule-them-all) method:
+
+To get all dependencies up and running just run:
 
 ```bash
 $ script/bootstrap
