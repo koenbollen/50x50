@@ -8,7 +8,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div>Hello {this.props.name}</div>
+        <div>Try to create a fibonacci sequence in rows or columns!</div>
         <Grid/>
       </div>
     );

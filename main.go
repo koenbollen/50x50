@@ -101,6 +101,7 @@ func main() {
 		AllowedOrigins: []string{
 			"https://50x50.koen.it",
 			"https://50x50.netlify.com/",
+			"http://localhost:1234",
 			"http://localhost:8080",
 		},
 	})

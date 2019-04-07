@@ -1,19 +1,27 @@
-# 50x50
+# 💠 50x50
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a244c9b2-a108-4d53-82d4-085ae5293cfd/deploy-status)](https://app.netlify.com/sites/50x50/deploys)
+[![Go Report Card](https://goreportcard.com/badge/github.com/koenbollen/50x50)](https://goreportcard.com/report/github.com/koenbollen/50x50)
 
-## Assignment
+## About
+
+This project was created as an assignment for Q42.nl
+
+### Assignment
 
 > Maak een 50x50 grid. Als je klikt op een cel wordt bij alle cellen in de rij en kolom van de cel 1 opgeteld. Was een cel leeg dan wordt die op 1 gezet. Na elke verandering licht een cel kort geel op. Als 5 elkaar in de Fibonacci-reeks opvolgende getallen naast elkaar staan, lichten deze cellen kort groen op en worden ze leeg gemaakt. Gebruik de programmeertaal die je het beste vindt passen.
 
-### Disected
+### Key Acceptance Criteria
 
-- 50x50 grid of clickable cells.
-- click cell and the row and column gets +1 (empty = 0)
-- cells pulse yellow on value increase
+- There is a 50x50 grid of clickable cells
+- Clicking on a set will increase the value of the entire row and column by `+1` (empty cells have a value of `0`).
+- Cells pulse yellow when it's value increases
+- If five cells in a row are part of the fibonacci sequence:  
+    Pulse these cells green and reset the value to 0 (emptying them).
 
-- if 5 cells in a row/col is in the fibonacci sequence:  
-    pulse green and empty cells
+### Demo
+
+Running at: https://50x50.netlify.com/
 
 ## Local Development
 
@@ -33,7 +41,11 @@ $ script/server
 $ script/client
 ```
 
+Then open your browser at http://localhost:1234
+
 ### Tasks
+
+These are roughly the steps I took, you can also checkout the [Git history](https://github.com/koenbollen/50x50/commits/master)!
 
 - [x] Backend bootstrap
 - [x] Basic calls
@@ -44,7 +56,7 @@ $ script/client
 - [x] Client yellow pulse
 - [x] Backend fibonacci search and action
 - [x] Client green pulse
-- [ ] Documentation and deployment
-- [ ] Better Error reporting
+- [x] Documentation and deployment
 - [ ] Extract handlers from main
+- [ ] Better Error reporting
 - [ ] Error handling clientside
