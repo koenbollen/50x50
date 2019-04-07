@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# script/bootstrap: Install all dependencies
+
+set -e
+cd "$(dirname "$0")/.."
+
+if ! command -v go >/dev/null; then
+  echo 'missing dependecy, please install Go: https://golang.org/' >&2
+  echo 'brew install go' >&2
+  exit 1
+fi
+
+if ! command -v node >/dev/null; then
+  echo 'missing dependecy, please install Nodejs: https://nodejs.org/' >&2
+  echo 'brew install nodejs' >&2
+  exit 1
+fi
+
+npm install -g yarn
+
+(
+  cd client
+  yarn install
+)

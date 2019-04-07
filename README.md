@@ -13,6 +13,24 @@
 - if 5 cells in a row/col is in the fibonacci sequence:  
     pulse green and empty cells
 
+## Local Development
+
+This project is created using Go and javscript. To get all dependencies up and running just run:
+
+```bash
+$ script/bootstrap
+```
+
+Then start the server and client separate terminals:
+
+```bash
+$ script/server
+```
+
+```bash
+$ script/client
+```
+
 ### Tasks
 
 - [x] Backend bootstrap
@@ -27,3 +45,4 @@
 - [ ] Documentation and deployment
 - [ ] Better Error reporting
 - [ ] Extract handlers from main
+- [ ] Error handling clientside

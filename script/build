@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# script/build: Create a docker image for this project.
+
+set -e
+cd "$(dirname "$0")/.."
+
+docker build -t koenbollen/50x50 .

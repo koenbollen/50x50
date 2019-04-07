@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# script/server: Run the backend locally
+
+set -e
+cd "$(dirname "$0")/.."
+
+go run main.go

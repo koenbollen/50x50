@@ -27,7 +27,7 @@ type response struct {
 }
 
 func main() {
-	logger, err := zap.NewDevelopment()
+	logger, err := zap.NewProduction()
 	if err != nil {
 		panic(err)
 	}
@@ -41,6 +41,8 @@ func main() {
 		if err != nil {
 			panic(err)
 		}
+
+		logger.Info("new state created", zap.String("session", session))
 
 		w.WriteHeader(http.StatusCreated)
 		err = json.NewEncoder(w).Encode(&response{
@@ -69,7 +71,13 @@ func main() {
 
 		paths := grid.SearchForSequence()
 		if len(paths) > 0 {
+			logger.Info("fibonacci paths found, clearing", zap.Int("count", len(paths)))
 			grid.ClearPaths(paths)
+		}
+
+		err = store.StoreGrid(req.Session, grid.Data)
+		if err != nil {
+			panic(err)
 		}
 
 		w.WriteHeader(http.StatusOK)
@@ -82,6 +90,9 @@ func main() {
 			panic(err)
 		}
 	})
+
+	client := http.FileServer(http.Dir("client/dist/"))
+	http.Handle("/", client)
 
 	addr := ":8080"
 	logger.Info("listening", zap.String("addr", addr))

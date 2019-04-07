@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# script/client: Run the client locally
+
+set -e
+cd "$(dirname "$0")/../client"
+pwd
+yarn start

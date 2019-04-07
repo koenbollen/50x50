@@ -6,8 +6,8 @@
   "private": true,
   "scripts": {
     "clean": "rm -r dist/",
-    "start": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "dependencies": {
     "isomorphic-unfetch": "^3.0.0",

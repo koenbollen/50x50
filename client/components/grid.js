@@ -1,7 +1,7 @@
 import React from "react";
 import fetch from "isomorphic-unfetch";
 
-import Cell from "./Cell";
+import Cell from "./cell";
 
 class Grid extends React.Component {
   constructor(props) {
