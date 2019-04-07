@@ -17,6 +17,7 @@ type memory struct {
 	ttl time.Duration
 }
 
+// NewMemoryStore creates a Store based on internal memory.
 func NewMemoryStore(ttl time.Duration) Store {
 	return &memory{
 		data:    make(map[string][]int),

@@ -2,9 +2,6 @@ package logic
 
 import "math"
 
-func SearchFibonacci(data []int, size int) {
-}
-
 // IsSquare returns true if the given integer is a perfect square.
 func IsSquare(x int) bool {
 	root := int(math.Sqrt(float64(x)))
