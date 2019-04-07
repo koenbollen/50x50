@@ -4,5 +4,5 @@
 
 set -e
 cd "$(dirname "$0")/../client"
-pwd
+
 yarn start

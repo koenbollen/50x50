@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# script/test: Run tests
+
+set -e
+cd "$(dirname "$0")/.."
+
+
+if ! command -v "$(go env GOPATH)/bin/golangci-lint" >/dev/null; then
+  go get -u github.com/golangci/golangci-lint/cmd/golangci-lint
+fi
+"$(go env GOPATH)/bin/golangci-lint" run ./...
+
+go test ./...
