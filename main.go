@@ -96,6 +96,14 @@ func main() {
 
 	addr := ":8080"
 	logger.Info("listening", zap.String("addr", addr))
-	err = http.ListenAndServe(addr, cors.AllowAll().Handler(http.DefaultServeMux))
+
+	c := cors.New(cors.Options{
+		AllowedOrigins: []string{
+			"https://50x50.koen.it",
+			"https://50x50.netlify.com/",
+			"http://localhost:8080",
+		},
+	})
+	err = http.ListenAndServe(addr, c.Handler(http.DefaultServeMux))
 	logger.Fatal("failed to setup http server", zap.Error(err))
 }
