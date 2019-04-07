@@ -3,6 +3,8 @@ import fetch from "isomorphic-unfetch";
 
 import Cell from "./cell";
 
+const SERVER_BASE = process.env["SERVER_BASE"];
+
 class Grid extends React.Component {
   constructor(props) {
     super(props);
@@ -12,7 +14,7 @@ class Grid extends React.Component {
   }
 
   async componentDidMount() {
-    const resp = await fetch("http://localhost:8080/state/create");
+    const resp = await fetch(SERVER_BASE+"/state/create");
     const data = await resp.json();
     this.setState({...data})
   }
@@ -21,7 +23,7 @@ class Grid extends React.Component {
     const x = i % this.state.size;
     const y = Math.floor(i / this.state.size);
 
-    const resp = await fetch("http://localhost:8080/state/move", {
+    const resp = await fetch(SERVER_BASE+"/state/move", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

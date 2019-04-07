@@ -1,5 +1,7 @@
 # 50x50
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a244c9b2-a108-4d53-82d4-085ae5293cfd/deploy-status)](https://app.netlify.com/sites/50x50/deploys)
+
 ## Assignment
 
 > Maak een 50x50 grid. Als je klikt op een cel wordt bij alle cellen in de rij en kolom van de cel 1 opgeteld. Was een cel leeg dan wordt die op 1 gezet. Na elke verandering licht een cel kort geel op. Als 5 elkaar in de Fibonacci-reeks opvolgende getallen naast elkaar staan, lichten deze cellen kort groen op en worden ze leeg gemaakt. Gebruik de programmeertaal die je het beste vindt passen.
