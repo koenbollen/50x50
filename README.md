@@ -19,10 +19,6 @@ This project was created as an assignment for Q42.nl
 - If five cells in a row are part of the fibonacci sequence:  
     Pulse these cells green and reset the value to 0 (emptying them).
 
-### Demo
-
-Running at: https://50x50.netlify.com/
-
 ## Local Development
 
 This project is created using Go and javscript. And following the 
