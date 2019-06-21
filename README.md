@@ -1,6 +1,5 @@
 # 💠 50x50
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a244c9b2-a108-4d53-82d4-085ae5293cfd/deploy-status)](https://app.netlify.com/sites/50x50/deploys)
 [![Go Report Card](https://goreportcard.com/badge/github.com/koenbollen/50x50)](https://goreportcard.com/report/github.com/koenbollen/50x50)
 
 ## About
